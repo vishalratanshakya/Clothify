@@ -9,6 +9,10 @@ const addProduct = async (req, res) => {
         const { name, description, price, category, subCategory, sizes, bestseller } = req.body
         console.log("Received form data:", { name, description, price, category, subCategory, sizes, bestseller });
 
+        if (!name || !description || !price) {
+            return res.json({ success: false, message: "Name, description, and price are required fields." })
+        }
+
         const image1 = req.files.image1 && req.files.image1[0]
         const image2 = req.files.image2 && req.files.image2[0]
         const image3 = req.files.image3 && req.files.image3[0]

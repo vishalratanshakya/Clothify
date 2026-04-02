@@ -16,6 +16,7 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
     const [products, setProducts] = useState([]);
     const [token, setToken] = useState('')
+    const [isAdmin, setIsAdmin] = useState(false);
     const navigate = useNavigate();
 
 
@@ -177,6 +178,11 @@ const ShopContextProvider = (props) => {
         if (token) {
             getUserCart(token)
         }
+        if (localStorage.getItem('isAdmin') === 'true') {
+            setIsAdmin(true)
+        } else {
+            setIsAdmin(false)
+        }
     }, [token])
 
     const value = {
@@ -185,7 +191,8 @@ const ShopContextProvider = (props) => {
         cartItems, addToCart, setCartItems,
         getCartCount, updateQuantity,
         getCartAmount, navigate, backendUrl,
-        setToken, token, getUserCart, clearCart
+        setToken, token, getUserCart, clearCart,
+        isAdmin, setIsAdmin
     }
 
     return (

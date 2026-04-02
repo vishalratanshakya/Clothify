@@ -86,12 +86,7 @@ const adminLogin = async (req, res) => {
         
         const {email,password} = req.body
 
-        console.log('Admin login attempt:', {
-            providedEmail: email,
-            providedPassword: password,
-            expectedEmail: process.env.ADMIN_EMAIL,
-            expectedPassword: process.env.ADMIN_PASSWORD
-        })
+        console.log('Admin login attempt email:', email)
 
         if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
             // Create admin token with proper ID structure for consistency

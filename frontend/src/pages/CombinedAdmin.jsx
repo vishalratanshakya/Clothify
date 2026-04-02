@@ -24,7 +24,9 @@ import {
   LogOut,
   X,
   Upload,
-  RefreshCw
+  RefreshCw,
+  Globe,
+  ExternalLink
 } from 'lucide-react'
 import axios from 'axios'
 import { ShopContext } from '../context/ShopContext'
@@ -83,6 +85,7 @@ const AdminDashboard = () => {
       { name: 'Dashboard', icon: Home, current: activeTab === 'dashboard' },
       { name: 'Products', icon: Package, current: activeTab === 'products' },
       { name: 'Orders', icon: ShoppingCart, current: activeTab === 'orders' },
+      { name: 'View Website', icon: Globe, current: false },
       { name: 'Help', icon: HelpCircle, current: activeTab === 'help' }
     ]}
   ]
@@ -369,6 +372,12 @@ const AdminDashboard = () => {
   // Add product
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    
+    if (!name || !description || !price) {
+      toast.error("Name, description, and price are required");
+      return;
+    }
+
     if (sizes.length === 0) {
       toast.error("Please select at least one product size");
       return;
@@ -537,6 +546,7 @@ const AdminDashboard = () => {
                       if (item.name === 'Dashboard') setActiveTab('dashboard')
                       if (item.name === 'Products') setActiveTab('products')
                       if (item.name === 'Orders') setActiveTab('orders')
+                      if (item.name === 'View Website') navigate('/')
                       if (item.name === 'Help') setActiveTab('help')
                     }}
                     className={`w-full flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors ${

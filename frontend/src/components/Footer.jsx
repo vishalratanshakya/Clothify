@@ -37,8 +37,8 @@ const Footer = () => {
             <p className='text-xl font-medium mb-5'>GET IN TOUCH</p>
             <ul className='flex flex-col gap-1 text-gray-600'>
                 <li className='font-medium'>Our Store</li>
-                <li>Ghaziabad Crossing Republic</li>
-                <li>9084410891</li>
+                <li>Crossings Republik, Ghaziabad</li>
+                <li>+91 9084410891</li>
                 <li>clothifyofficial@gmail.com</li>
             </ul>
         </div>
@@ -47,7 +47,7 @@ const Footer = () => {
 
         <div>
             <hr />
-            <p className='py-5 text-sm text-center'>Copyright 2024@ Clothify.com - All Right Reserved.</p>
+            <p className='py-5 text-sm text-center'>Copyright 2025@ Clothify.com - All Right Reserved.</p>
         </div>
 
     </div>

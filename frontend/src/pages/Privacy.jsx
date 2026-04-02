@@ -72,9 +72,9 @@ const Privacy = () => {
           <h2 className='text-xl font-semibold mb-4 text-gray-800'>Contact Us</h2>
           <p>If you have any questions about this Privacy Policy, please contact us:</p>
           <p className='mt-2'>
-            Email: clothifyofficial@gmail.com<br />
-            Phone: 9084410891<br />
-            Address: Ghaziabad Crossing Republic
+            <strong>Email:</strong> clothifyofficial@gmail.com<br />
+            <strong>Phone:</strong> +91 9084410891<br />
+            <strong>Address:</strong> Crossings Republik, Ghaziabad, Uttar Pradesh, India
           </p>
         </div>
 
